@@ -50,12 +50,16 @@ void getArray(struct array *parr)
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
-    int lib;
+    int lib = 0;
     for (int i = 0; i < arrIn1->size; i++)
     {
         for (int j = 0; j < arrIn2->size; j++)
         {
-            if(arrIn1->pdata[i] = arrIn2->pdata[j])
+            int t = arrIn1->pdata[i];
+
+            int f = arrIn2->pdata[j];
+
+            if(t==f)
             {
                 lib++;
             }
@@ -69,10 +73,20 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
     {
         for (int j = 0; j < arrIn2->size; j++)
         {
-            if(arrIn1->pdata[i] = arrIn2->pdata[i])
+            int t = arrIn1->pdata[i];
+
+            int f = arrIn2->pdata[j];
+
+            if(t==f)
             {
+
+                if(a>lib)
+                {
+                    break;
+                }
                 arrC[a] = arrIn1->pdata[i];
                 a++;
+
             }
         }
     }
