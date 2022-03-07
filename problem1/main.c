@@ -38,16 +38,14 @@ void getArray(struct array *parr)
 {
     //printf("Introdusca el tamaño por favor:) \n");
     scanf("%d", &(parr->size));
-    int arr[parr->size];
-
+    int *arr = malloc(sizeof(int)* parr->size);
 
     for(int i = 0; i < parr->size; i++)
     {
         scanf("%d", &arr[i]);
     }
-    int *sol = arr;
 
-    parr->pdata = sol;
+    parr->pdata = arr;
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
@@ -63,22 +61,22 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
             }
         }
     }
-
     arrOut->size = lib;
-    int arrC[lib];
-        for (int i = 0; i < arrIn1->size; i++)
+    int *arrC = malloc(sizeof(int)* arrOut->size);
+    int a = 0;
+    
+    for (int i = 0; i < arrIn1->size; i++)
     {
         for (int j = 0; j < arrIn2->size; j++)
         {
             if(arrIn1->pdata[i] = arrIn2->pdata[i])
             {
-
-                arrC[lib] = arrIn1->pdata[i];
+                arrC[a] = arrIn1->pdata[i];
+                a++;
             }
         }
     }
-    int *sol = arrC;
-    arrOut->pdata = sol;
+    arrOut->pdata = arrC;
 }
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
