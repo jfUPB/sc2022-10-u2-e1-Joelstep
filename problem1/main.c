@@ -76,21 +76,17 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
             int t = arrIn1->pdata[i];
 
             int f = arrIn2->pdata[j];
-            if(a>lib)
-                {
-                    break;
-                }
+            
 
             if(t==f)
             {
-                for(int k = 0; k < lib; k++)
+                if(a>lib)
                 {
-                if(arrC[k]!=arrIn1->pdata[i] & arrC[k]!=arrIn2->pdata[j])
-                {
+                    break;
+                }
                     arrC[a] = arrIn1->pdata[i];
                     a++;
-                }
-                }
+                
             }
         }
     }
