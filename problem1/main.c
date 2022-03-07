@@ -36,7 +36,7 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
-    printf("Introdusca el tamaño por favor:) \n");
+    //printf("Introdusca el tamaño por favor:) \n");
     scanf("%d", &(parr->size));
     int arr[parr->size];
 
@@ -45,8 +45,9 @@ void getArray(struct array *parr)
     {
         scanf("%d", &arr[i]);
     }
+    int *sol = arr;
 
-    parr->pdata = &arr;
+    parr->pdata = sol;
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
@@ -56,7 +57,7 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
     {
         for (int j = 0; j < arrIn2->size; j++)
         {
-            if(*(arrIn1->pdata + i) = *(arrIn2->pdata + j))
+            if(arrIn1->pdata[i] = arrIn2->pdata[j])
             {
                 lib++;
             }
@@ -69,14 +70,15 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
     {
         for (int j = 0; j < arrIn2->size; j++)
         {
-            if(*(arrIn1->pdata + i) = *(arrIn2->pdata + j))
+            if(arrIn1->pdata[i] = arrIn2->pdata[i])
             {
-                
-                arrC[lib] = *(arrIn1->pdata + i);
+
+                arrC[lib] = arrIn1->pdata[i];
             }
         }
     }
-    arrOut->pdata = &arrC;
+    int *sol = arrC;
+    arrOut->pdata = sol;
 }
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
