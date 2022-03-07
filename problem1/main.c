@@ -37,13 +37,13 @@ void printArray(struct array *parr)
 void getArray(struct array *parr)
 {
     printf("Introdusca el tamaño por favor:) \n");
-    scanf("%d", parr->size);
+    scanf("%d", &(parr->size));
     int arr[parr->size];
 
 
     for(int i = 0; i < parr->size; i++)
     {
-        scanf("%d", arr[i]);
+        scanf("%d", &arr[i]);
     }
 
     parr->pdata = &arr;
@@ -51,20 +51,20 @@ void getArray(struct array *parr)
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
-    int tamaño = 0;
+    int lib;
     for (int i = 0; i < arrIn1->size; i++)
     {
         for (int j = 0; j < arrIn2->size; j++)
         {
             if(*(arrIn1->pdata + i) = *(arrIn2->pdata + j))
             {
-                tamaño++;
+                lib++;
             }
         }
     }
 
-    arrOut->size = tamaño;
-    int arrC[tamaño];
+    arrOut->size = lib;
+    int arrC[lib];
         for (int i = 0; i < arrIn1->size; i++)
     {
         for (int j = 0; j < arrIn2->size; j++)
@@ -72,7 +72,7 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
             if(*(arrIn1->pdata + i) = *(arrIn2->pdata + j))
             {
                 
-                arrC[tamaño] = *(arrIn1->pdata + i);
+                arrC[lib] = *(arrIn1->pdata + i);
             }
         }
     }
